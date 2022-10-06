@@ -1,0 +1,80 @@
+@import '../../styles/variables.scss';
+.nav-bar {
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  background-color: white;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .nav-container {
+    @include flex(space-around, null, null);
+    position: relative;
+    height: 100%;
+    border-bottom: 0.5px solid #d3d3d3;
+    z-index: 999;
+  }
+
+  .nav-logo {
+    @include flex(null, center, null);
+    height: 100%;
+    img {
+      height: 100%;
+    }
+    span {
+      display: inline-block;
+      width: 170px;
+      border-left: 1px solid black;
+      text-align: center;
+      font-size: 32px;
+      font-weight: bold;
+      font-family: 'Lobster', cursive;
+    }
+  }
+  .nav-logo-img {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+  }
+
+  .nav-search {
+    @include flex(null, center, null);
+    position: relative;
+    width: 240px;
+    height: 100%;
+  }
+
+  .search-icon {
+    position: absolute;
+    color: #d3d3d3;
+    font-size: 10px;
+    transition: left 0.5s;
+  }
+
+  .search-icon-default {
+    left: 90px;
+  }
+
+  .search-input {
+    width: 100%;
+    height: 30px;
+    background-color: #f9f9f9;
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 15px;
+  }
+
+  .nav-status {
+    @include flex(space-between, center, row);
+    width: 150px;
+    font-size: 30px;
+  }
+
+  .nav-profile-icon {
+    cursor: pointer;
+  }
+}
