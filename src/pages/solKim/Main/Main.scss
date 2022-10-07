@@ -1,0 +1,427 @@
+@import 'src/styles/variables.scss';
+
+.main-sol {
+  .background {
+    position: relative;
+    width: 100vw;
+    height: 100%;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+  }
+
+  .black-font {
+    color: black;
+    font-size: 15px;
+  }
+
+  .bold-font {
+    font-weight: bold;
+  }
+
+  .gray-font {
+    color: #d3d3d3;
+    font-size: 15px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .blue-font {
+    font-size: 15px;
+    color: #4691ef;
+  }
+
+  nav {
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    background-color: white;
+  }
+
+  .nav-container {
+    @include flex(space-around, null, null);
+    position: relative;
+    height: 100%;
+    border-bottom: 0.5px solid #d3d3d3;
+    z-index: 999;
+  }
+
+  .nav-logo {
+    @include flex(null, center, null);
+    height: 100%;
+    img {
+      height: 100%;
+    }
+    span {
+      display: inline-block;
+      width: 170px;
+      border-left: 1px solid black;
+      text-align: center;
+      font-size: 32px;
+      font-weight: bold;
+      font-family: 'Lobster', cursive;
+    }
+  }
+  .nav-logo-img {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+  }
+
+  .nav-search {
+    @include flex(null, center, null);
+    position: relative;
+    width: 240px;
+    height: 100%;
+  }
+
+  .search-icon {
+    position: absolute;
+    color: #d3d3d3;
+    font-size: 10px;
+    transition: left 0.5s;
+  }
+
+  .search-icon-default {
+    left: 90px;
+  }
+
+  .search-icon-move {
+    left: 15px;
+  }
+
+  .search-input {
+    width: 100%;
+    height: 30px;
+    background-color: #f9f9f9;
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 15px;
+  }
+
+  .nav-status {
+    @include flex(space-between, center, row);
+    width: 150px;
+    font-size: 30px;
+  }
+
+  .nav-profile-icon {
+    cursor: pointer;
+  }
+
+  .main-container {
+    @include flex(center, null, row);
+    height: 100%;
+    padding-top: 90px;
+  }
+
+  .main-feeds {
+    width: 470px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    background-color: white;
+    border: 0.5px solid #d3d3d3;
+  }
+
+  .feeds-header {
+    @include flex(space-between, center, null);
+    width: 100%;
+    height: 56px;
+  }
+
+  .feeds-profile {
+    @include flex(space-around, center, row);
+    width: 150px;
+  }
+
+  .profile-img-wrapper {
+    @include flex(null, center, null);
+    width: 35px;
+    height: 35px;
+    border-radius: 35px;
+    overflow: hidden;
+  }
+
+  .feeds-header-menu {
+    width: 32px;
+  }
+
+  .feeds-img {
+    width: 470px;
+    height: 470px;
+    overflow: hidden;
+  }
+
+  .feeds-status {
+    @include flex(space-between, null, null);
+    height: 46px;
+  }
+
+  .feeds-status-left {
+    @include flex(space-around, center, null);
+    position: relative;
+    width: 130px;
+    height: 46px;
+    font-size: 25px;
+  }
+
+  .feeds-status-right {
+    @include flex(null, center, null);
+    width: 30px;
+    height: 46px;
+    font-size: 25px;
+  }
+
+  .feeds-like {
+    @include flex(null, center, null);
+    height: 20px;
+    margin-left: 10px;
+  }
+
+  .feeds-like-img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .feeds-comment {
+    @include flex(space-between, center, null);
+    margin: 10px 0;
+    span {
+      display: inline-block;
+      margin-left: 10px;
+      margin-bottom: 5px;
+    }
+  }
+
+  .feeds-comment-right {
+    height: 100%;
+    margin-right: 10px;
+    font-size: 5px;
+  }
+
+  .feeds-comment-form {
+    @include flex(space-between, null, null);
+    border-top: 1px solid #d3d3d3;
+  }
+
+  .comment-input {
+    width: 410px;
+    height: 49px;
+    padding: 5px 16px;
+    border: none;
+  }
+
+  .comment-btn {
+    width: 54px;
+    height: 49px;
+    background-color: white;
+    border: none;
+  }
+
+  .main-sidebar {
+    width: 280px;
+    height: 100px;
+  }
+
+  .sidebar-recommend,
+  .sidebar-story {
+    width: 280px;
+    margin-top: 15px;
+    padding: 20px;
+    background-color: white;
+    border: 0.5px solid #d3d3d3;
+  }
+
+  .recommend,
+  .story {
+    @include flex(null, center, row);
+    height: 45px;
+  }
+  .myprofile-wrapper span,
+  .story span {
+    display: block;
+    margin-left: 10px;
+  }
+
+  .sidebar-story {
+    height: 280px;
+  }
+
+  .sidebar-recommend-header,
+  .sidebar-story-header {
+    @include flex(space-between, null, null);
+    margin-bottom: 10px;
+  }
+
+  .sidebar-story-content {
+    height: 220px;
+    margin-top: 10px;
+    overflow: scroll;
+  }
+
+  .sidebar-recommend {
+    height: 200px;
+  }
+
+  .recommend-profile-wrapper {
+    @include flex(null, null, column);
+    margin-left: 10px;
+  }
+
+  .now-follow {
+    width: 130px;
+    @include textOverflow;
+  }
+
+  .recommend {
+    position: relative;
+  }
+
+  .follow {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+  }
+
+  .sidebar-profile {
+    @include flex(null, center, row);
+    height: 50px;
+    margin-top: 10px;
+  }
+
+  .myprofile-img-wrapper {
+    @include flex(null, center, null);
+    width: 45px;
+    height: 45px;
+    border-radius: 45px;
+    overflow: hidden;
+  }
+
+  .myprofile-wrapper {
+    @include flex(null, null, column);
+    margin-left: 15px;
+  }
+
+  .comment-contents {
+    @include flex(null, center, null);
+    position: relative;
+    width: 460px;
+    .comment {
+      width: 250px;
+      @include textOverflow;
+    }
+  }
+
+  .float-right {
+    display: inline-block;
+    position: absolute;
+    right: 35px;
+  }
+
+  .blank-heart {
+    cursor: pointer;
+  }
+
+  .red-heart {
+    color: red;
+  }
+
+  .display-none {
+    display: none;
+  }
+
+  .nav-profile-box {
+    position: absolute;
+    position: fixed;
+    top: 80px;
+    right: 6%;
+    width: 200px;
+    padding-top: 4px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 1px 1px 1px 1px lightgray;
+    transition: all 0.5s;
+  }
+
+  .hide-top {
+    top: 40px;
+    opacity: 0;
+  }
+
+  .nav-profile-box-content {
+    @include flex(null, center, null);
+    width: 200px;
+    height: 37px;
+    margin: 0;
+    padding: 8px 16px;
+    span {
+      display: block;
+      margin-left: 10px;
+      font-size: 16px;
+      font-weight: lighter;
+      cursor: pointer;
+    }
+  }
+
+  .logout {
+    border-top: 0.5px solid #d3d3d3;
+  }
+
+  .copyright {
+    @include flex(space-around, flex-start, column);
+    width: 250px;
+    height: 100px;
+    padding-top: 10px;
+  }
+
+  .search-results {
+    position: fixed;
+    position: absolute;
+    top: 60px;
+    width: 240px;
+    height: 250px;
+    padding-top: 4px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 1px 1px 1px 1px lightgray;
+    opacity: 1;
+    transition: all 0.3s;
+    overflow: scroll;
+    z-index: 99;
+  }
+
+  .search-result-contents {
+    @include flex(flex-start, center, null);
+    width: 240px;
+    height: 50px;
+    margin: 0;
+    padding: 8px 16px;
+    border-bottom: 0.5px solid #d3d3d3;
+    span {
+      margin-left: 10px;
+    }
+  }
+
+  .transparent {
+    opacity: 0;
+    z-index: -999;
+  }
+
+  .delete {
+    display: inline-block;
+    position: absolute;
+    top: 3px;
+    right: 5px;
+    margin-bottom: 0;
+    font-size: 13px;
+    cursor: pointer;
+  }
+}
