@@ -18,7 +18,7 @@ function Comments({ commentList, removeComment }) {
 }
 
 function Comment({ removeComment, a, i }) {
-  let [heartIcon, setHeartIcon] = useState('far');
+  const [heartIcon, setHeartIcon] = useState('far');
   const heartIconHandler = () => {
     heartIcon === 'far' ? setHeartIcon('fas red-heart') : setHeartIcon('far');
   };

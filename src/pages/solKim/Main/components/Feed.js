@@ -3,27 +3,27 @@ import Comments from './Comments';
 import { useState } from 'react';
 
 function Feed() {
-  let [commentList, setCommentList] = useState([
+  const [commentList, setCommentList] = useState([
     {
       key: 'sample',
       id: 'alphgo',
       comment: '소통해요~',
     },
   ]);
-  let [heartIcon, setHeartIcon] = useState('far');
+  const [heartIcon, setHeartIcon] = useState('far');
+  const [commentValue, setCommentValue] = useState('');
 
   const pushComment = () => {
-    const commentInput = document.querySelector('.comment-input');
     let copy = [...commentList];
-    if (commentInput.value.trim()) {
+    if (commentValue.trim()) {
       let randomNumber = new Date().getTime() + Math.random();
       let obj = {};
       obj.key = randomNumber;
       obj.id = 'wecoder_frontend';
-      obj.comment = commentInput.value;
+      obj.comment = commentValue;
       copy.push(obj);
       setCommentList(copy);
-      commentInput.value = '';
+      setCommentValue('');
     }
   };
 
@@ -98,6 +98,10 @@ function Feed() {
           className="comment-input black-font"
           type="text"
           placeholder="댓글 달기..."
+          onChange={e => {
+            setCommentValue(e.target.value);
+          }}
+          value={commentValue}
         />
         <button
           className="comment-btn blue-font"
