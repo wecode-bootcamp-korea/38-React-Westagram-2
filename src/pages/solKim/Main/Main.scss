@@ -307,7 +307,19 @@
     @include flex(null, null, column);
     margin-left: 15px;
   }
-
+  .sidebar-footer {
+    li {
+      display: inline-block;
+      margin-right: 5px;
+      &::after {
+        content: '·';
+        margin-left: 5px;
+      }
+      &:last-child::after {
+        content: '';
+      }
+    }
+  }
   .comment-contents {
     @include flex(null, center, null);
     position: relative;

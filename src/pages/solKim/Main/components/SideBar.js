@@ -1,6 +1,7 @@
 import React from 'react';
 import Recommend from './Recommend';
 import Stories from './Stories';
+import { SIDEBAR_FOOTER } from './data/SIDEBAR_FOOTER';
 
 function SideBar() {
   return (
@@ -18,10 +19,11 @@ function SideBar() {
       <Recommend />
       <footer className="copyright">
         <div>
-          <span className="gray-font">
-            Instagram 정보 . 지원 . 홍보 센터 . API . 채용 정보 .
-            개인정보처리방침 . 약관 . 디렉터리 . 프로필 . 해시태그 . 언어
-          </span>
+          <ul className="sidebar-footer gray-font">
+            {SIDEBAR_FOOTER.map(menu => {
+              return <li key={menu.id}>{menu.menuName}</li>;
+            })}
+          </ul>
         </div>
         <div>
           <span className="gray-font">ⓒ 2019 INSTAGRAM</span>
