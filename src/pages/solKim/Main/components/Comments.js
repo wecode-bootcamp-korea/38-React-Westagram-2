@@ -1,23 +1,27 @@
 import React, { useState } from 'react';
 
-function Comments({ commentList, removeComment }) {
+function Comments({ commentList, removeComment, feed }) {
   return (
     <ul id="comment-box">
       <li className="comment-contents">
-        <span className="black-font bold-font">dog_dogdog</span>
-        <span className="black-font">공원 갔다왔는데 사람이 하나도...</span>
-        <span className="gray-font">더 보기</span>
+        <span className="black-font bold-font">{feed.userId}</span>
+        <span className="black-font">{feed.feedText}</span>
       </li>
-      {commentList.map((el, i) => {
+      {commentList.map((comment, i) => {
         return (
-          <Comment removeComment={removeComment} el={el} i={i} key={el.key} />
+          <Comment
+            removeComment={removeComment}
+            comment={comment}
+            i={i}
+            key={comment.key}
+          />
         );
       })}
     </ul>
   );
 }
 
-function Comment({ removeComment, el, i }) {
+function Comment({ removeComment, comment, i }) {
   const [heartIcon, setHeartIcon] = useState('far');
   const heartIconHandler = () => {
     heartIcon === 'far' ? setHeartIcon('fas red-heart') : setHeartIcon('far');
@@ -25,8 +29,8 @@ function Comment({ removeComment, el, i }) {
 
   return (
     <li className="comment-contents">
-      <span className="black-font bold-font">{el.id}</span>
-      <span className="black-font comment">{el.comment}</span>
+      <span className="black-font bold-font">{comment.userId}</span>
+      <span className="black-font comment">{comment.comment}</span>
       <i
         className={`${heartIcon} fa-heart gray-font float-right blank-heart comment-blank-heart`}
         onClick={() => {

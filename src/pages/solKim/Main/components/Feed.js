@@ -2,14 +2,8 @@ import React from 'react';
 import Comments from './Comments';
 import { useState } from 'react';
 
-function Feed() {
-  const [commentList, setCommentList] = useState([
-    {
-      key: 'sample',
-      id: 'alphgo',
-      comment: '소통해요~',
-    },
-  ]);
+function Feed({ feed }) {
+  const [commentList, setCommentList] = useState(feed.commentList);
   const [heartIcon, setHeartIcon] = useState('far');
   const [commentValue, setCommentValue] = useState('');
 
@@ -19,7 +13,7 @@ function Feed() {
       let randomNumber = new Date().getTime() + Math.random();
       let obj = {};
       obj.key = randomNumber;
-      obj.id = 'wecoder_frontend';
+      obj.userId = 'wecoder_frontend';
       obj.comment = commentValue;
       copy.push(obj);
       setCommentList(copy);
@@ -46,16 +40,16 @@ function Feed() {
       <header className="feeds-header">
         <div className="feeds-profile">
           <div className="profile-img-wrapper">
-            <img alt="profile-pic" src="/images/solKim/profile1.jpg" />
+            <img alt="profile-pic" src={feed.userProfilePic} />
           </div>
-          <span className="black-font bold-font">dog_dogdog</span>
+          <span className="black-font bold-font">{feed.userId}</span>
         </div>
         <div className="feeds-header-menu">
           <i className="fas fa-ellipsis-h" />
         </div>
       </header>
       <div className="feeds-img">
-        <img alt="park" src="/images/solKim/park.jpg" />
+        <img alt="park" src={feed.feedPhoto} />
       </div>
       <div className="feeds-status">
         <div className="feeds-status-left">
@@ -75,17 +69,21 @@ function Feed() {
       </div>
       <div className="feeds-like">
         <div className="feeds-like-img">
-          <img alt="profile-pic" src="/images/solKim/profile2.jpg" />
+          <img alt="profile-pic" src={feed.recentLikeProfilePic} />
         </div>
-        <span className="black-font bold-font">human_human</span>
+        <span className="black-font bold-font">{feed.recentLike}</span>
         <span className="black-font">님 외&nbsp;</span>
-        <span className="black-font bold-font">10명</span>
+        <span className="black-font bold-font">{feed.likes - 1}명</span>
         <span className="black-font">이 좋아합니다.</span>
       </div>
       <div className="feeds-comment">
         <div>
-          <Comments commentList={commentList} removeComment={removeComment} />
-          <span className="gray-font">42분 전</span>
+          <Comments
+            commentList={commentList}
+            removeComment={removeComment}
+            feed={feed}
+          />
+          <span className="gray-font">{feed.uploadTime}</span>
         </div>
       </div>
       <form
