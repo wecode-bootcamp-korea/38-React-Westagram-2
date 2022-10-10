@@ -8,16 +8,16 @@ function Comments({ commentList, removeComment }) {
         <span className="black-font">공원 갔다왔는데 사람이 하나도...</span>
         <span className="gray-font">더 보기</span>
       </li>
-      {commentList.map((a, i) => {
+      {commentList.map((el, i) => {
         return (
-          <Comment removeComment={removeComment} a={a} i={i} key={a.key} />
+          <Comment removeComment={removeComment} el={el} i={i} key={el.key} />
         );
       })}
     </ul>
   );
 }
 
-function Comment({ removeComment, a, i }) {
+function Comment({ removeComment, el, i }) {
   const [heartIcon, setHeartIcon] = useState('far');
   const heartIconHandler = () => {
     heartIcon === 'far' ? setHeartIcon('fas red-heart') : setHeartIcon('far');
@@ -25,8 +25,8 @@ function Comment({ removeComment, a, i }) {
 
   return (
     <li className="comment-contents">
-      <span className="black-font bold-font">{a.id}</span>
-      <span className="black-font comment">{a.comment}</span>
+      <span className="black-font bold-font">{el.id}</span>
+      <span className="black-font comment">{el.comment}</span>
       <i
         className={`${heartIcon} fa-heart gray-font float-right blank-heart comment-blank-heart`}
         onClick={() => {
