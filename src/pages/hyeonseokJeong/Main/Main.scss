@@ -1,0 +1,153 @@
+.hyeonseok_main {
+  background-color: rgb(250, 250, 250);
+  .whole_main {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+
+    .feed_main {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      width: 320px;
+      border: 2px solid lightgray;
+      border-radius: 3px;
+      background-color: white;
+
+      .Feed_header_main {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding-top: 5px;
+        margin-bottom: 5px;
+
+        .feed_header_main_img {
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          margin-right: 5px;
+          margin-left: 5px;
+        }
+      }
+
+      .Feed_img_main {
+        width: 100%;
+
+        .feed_img_main_img {
+          width: 100%;
+        }
+      }
+
+      .Feed_likeicon_main {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+
+        .feed_likeicon_left_main {
+          margin-left: 5px;
+        }
+
+        .feed_likeicon_right_main {
+          margin-right: 5px;
+        }
+      }
+
+      .Feed_usertext_main {
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+        .user_img {
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          margin: 0px 5px 5px 5px;
+        }
+      }
+
+      .Feed_comment_main {
+        width: 100%;
+        padding-top: 0px;
+        border: 1px solid lightgray;
+
+        .comment_ul {
+          list-style-type: none;
+          padding-left: 7px;
+
+          .comment_li {
+            display: flex;
+            justify-content: space-between;
+          }
+
+          .comment_li_i {
+            margin-right: 10px;
+            font-size: 10px;
+          }
+        }
+      }
+
+      .Feed_userinput_main {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .Feed_userinput_value_main {
+          width: 85%;
+          border: none;
+        }
+
+        .Feed_userinput_btn_main {
+          border: none;
+          width: 15%;
+        }
+      }
+    }
+
+    .aside_main {
+      width: 280px;
+      margin-left: 30px;
+      margin-top: 13px;
+
+      .asideTop_Main {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 220px;
+        height: 180px;
+        margin-bottom: 10px;
+        background-color: white;
+        border: 2px solid gray;
+        border-radius: 5px;
+
+        .aside_list_main {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          margin: 0px 8px 0px 8px;
+          height: 100%;
+
+          .asideTop_Main_img {
+            width: 20px;
+            border-radius: 50%;
+            margin-right: 5px;
+          }
+        }
+
+        .asideTop_listname_main {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          height: 100%;
+          margin: 0px 8px 0px 8px;
+
+          .listname_title {
+            color: gray;
+            font-size: 14px;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}

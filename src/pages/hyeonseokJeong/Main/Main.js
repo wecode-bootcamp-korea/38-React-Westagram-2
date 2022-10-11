@@ -1,15 +1,21 @@
-import React from 'react';
-import Nav from '../../../components/Nav/Nav';
+import MainFeed from './MainFeed';
+import MainAside from './MainAside';
+import MainHeader from './MainHeader';
 
-function MainHyeonseok() {
+function Main() {
   return (
-    <>
-      <div>
-        <Nav />
+    <div className="hyeonseok_main">
+      <MainHeader />
+      <div className="whole_main">
+        <main className="feed_main">
+          <MainFeed />
+        </main>
+        <aside className="aside_main">
+          <MainAside />
+        </aside>
       </div>
-      <div />
-    </>
+    </div>
   );
 }
 
-export default MainHyeonseok;
+export default Main;
