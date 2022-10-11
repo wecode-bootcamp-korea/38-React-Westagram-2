@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './Login.scss';
 import { Link, useNavigate } from 'react-router-dom';
 
 function LoginSol() {
   const [idInput, setIdInput] = useState('');
   const [passwordInput, setPasswordInput] = useState('');
-  const [idValid, setIdValid] = useState(false);
-  const [passwordValid, setPasswordValid] = useState(false);
-  const [btnOnOff, setBtnOnOff] = useState('disabled-btn');
 
   const navigate = useNavigate();
+
+  const isNotBlank = idInput.length > 0 && passwordInput.length > 0;
+  const isIdValidate = idInput.includes('@');
+  const isPwValidate = passwordInput.length > 4;
 
   const saveUserId = e => {
     setIdInput(e.target.value);
@@ -18,33 +19,17 @@ function LoginSol() {
     setPasswordInput(e.target.value);
   };
 
-  const btnHandler = () => {
-    idInput.length > 0 && passwordInput.length > 0
-      ? setBtnOnOff('')
-      : setBtnOnOff('disabled-btn');
-  };
-
-  const validationIdAndPassword = () => {
-    idInput.includes('@') ? setIdValid(true) : setIdValid(false);
-    passwordInput.length > 4 ? setPasswordValid(true) : setPasswordValid(false);
-  };
-
   const moveToMain = () => {
-    if (btnOnOff === '') {
-      if (idValid === false) {
+    if (isNotBlank) {
+      if (!isIdValidate) {
         alert('이메일에 @를 포함시켜주세요');
-      } else if (passwordValid === false) {
+      } else if (!isPwValidate) {
         alert('비밀번호는 5자 이상 입력하세요');
       } else {
         navigate('/main-sol');
       }
     }
   };
-
-  useEffect(() => {
-    btnHandler();
-    validationIdAndPassword();
-  }, [idInput, passwordInput]);
 
   return (
     <div className="login-sol">
@@ -79,7 +64,7 @@ function LoginSol() {
             />
             <button
               type="button"
-              className={`login-btn ${btnOnOff}`}
+              className={`login-btn ${isNotBlank ? '' : 'disabled-btn'}`}
               onClick={moveToMain}
             >
               로그인
