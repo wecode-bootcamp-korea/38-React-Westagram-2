@@ -5,7 +5,7 @@ import SideBar from './components/SideBar';
 import './Main.scss';
 
 function MainSol() {
-  const [feedList, setFeedList] = useState([]);
+  const [feedList, setFeedList] = useState(null);
 
   useEffect(() => {
     fetch('/data/solKim/feeds.json')
@@ -19,7 +19,7 @@ function MainSol() {
         <Nav />
         <main className="main-container">
           <section className="main-feeds-wrapper">
-            {feedList.map(feed => {
+            {feedList?.map(feed => {
               return <Feed key={feed.id} feed={feed} />;
             })}
           </section>
