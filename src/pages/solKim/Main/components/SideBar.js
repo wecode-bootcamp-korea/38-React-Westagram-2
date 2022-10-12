@@ -1,6 +1,6 @@
 import React from 'react';
-import Recommend from './Recommend';
 import Stories from './Stories';
+import Recommend from './Recommend';
 import { SIDEBAR_FOOTER } from './data/SIDEBAR_FOOTER';
 
 function SideBar() {

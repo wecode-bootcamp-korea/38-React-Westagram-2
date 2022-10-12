@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './Login.scss';
 import { Link, useNavigate } from 'react-router-dom';
+import './Login.scss';
 
 function LoginSol() {
   const [idInput, setIdInput] = useState('');

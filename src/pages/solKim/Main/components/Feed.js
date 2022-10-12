@@ -1,6 +1,6 @@
 import React from 'react';
-import Comments from './Comments';
 import { useState } from 'react';
+import Comments from './Comments';
 
 function Feed({ feed }) {
   const [commentList, setCommentList] = useState(feed.commentList);
