@@ -1,11 +1,12 @@
 import MainFeed from './MainFeed';
 import MainAside from './MainAside';
-import MainHeader from './MainHeader';
+import MainFooter from './MainFooter';
+import Nav from '../../../components/Nav/Nav';
 
-function Main() {
+function MainHyeonseok() {
   return (
     <div className="hyeonseok_main">
-      <MainHeader />
+      <Nav />
       <div className="whole_main">
         <main className="feed_main">
           <MainFeed />
@@ -14,8 +15,11 @@ function Main() {
           <MainAside />
         </aside>
       </div>
+      <footer className="FOOTER_MAIN">
+        <MainFooter />
+      </footer>
     </div>
   );
 }
 
-export default Main;
+export default MainHyeonseok;

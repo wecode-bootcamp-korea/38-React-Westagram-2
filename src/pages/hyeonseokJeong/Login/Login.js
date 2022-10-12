@@ -3,12 +3,11 @@ import { useState } from 'react';
 import './Login.scss';
 import { useNavigate } from 'react-router-dom';
 
-function Login() {
+function LoginHyeonseok() {
   const [thisIsIdValue, setThisIsIdValue] = useState('');
   const [thisIsPwValue, setThisIsPwValue] = useState('');
 
   const navigate = useNavigate();
-  console.log(navigate);
   return (
     <div>
       <main className="main_login">
@@ -26,7 +25,10 @@ function Login() {
             {(thisIsIdValue.length &&
               thisIsIdValue.includes('@') &&
               thisIsIdValue.includes('.')) > 0 && thisIsPwValue.length > 6 ? (
-              <button className="btn_login" onClick={navigate('/main')}>
+              <button
+                className="btn_login"
+                onClick={navigate('/main-hyeonseok')}
+              >
                 로그인
               </button>
             ) : (
@@ -51,4 +53,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default LoginHyeonseok;

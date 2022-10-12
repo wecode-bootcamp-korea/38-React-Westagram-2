@@ -1,5 +1,7 @@
 import { useRef, useState } from 'react';
 import './Main.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 function MainFeed() {
   // const [form, setForm] = useState({
@@ -59,7 +61,7 @@ function MainFeed() {
     <li key={item.id} className="comment_li">
       hyeonseok {item.text}{' '}
       <span onClick={() => commentD(item.id)}>
-        <i class="fa-regular fa-x comment_li_i" />
+        <FontAwesomeIcon icon={faXmark} />
       </span>
     </li>
   ));
@@ -121,7 +123,7 @@ function MainFeed() {
           className="Feed_userinput_value_main"
           value={commentValue}
           onChange={onChange}
-          onKeyPress={keyEnter}
+          onKeyDown={keyEnter}
         />
         <button className="Feed_userinput_btn_main" onClick={onClick}>
           게시
