@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Nav from '../../../components/Nav/Nav';
 import Comment from './Components/Comment';
 import './Main.scss';
@@ -7,10 +7,25 @@ import sky from '../../../assets/dayeong/images/sky.jpg';
 import blank from '../../../assets/dayeong/images/blank_profile-pic.png';
 import city from '../../../assets/dayeong/images/city.jpg';
 import '@fortawesome/fontawesome-free/js/all.js';
+import Footer from './Components/Footer';
+import Feeds from './Components/Feeds';
 
 function MainDayeong() {
-  const [commnetValue, setCommentValue] = useState('');
+  const [commentValue, setCommentValue] = useState('');
   const [commentArr, setCommentArr] = useState([]);
+  const [feeds, setFeeds] = useState(null);
+
+  useEffect(() => {
+    fetch('/data/dayeongUsers.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        setFeeds(data);
+      });
+  }, []);
+
+  // console.log(feeds);
 
   // 코멘트 value
   const saveComment = e => {
@@ -24,7 +39,7 @@ function MainDayeong() {
   const onSubmit = e => {
     e.preventDefault();
     const comment = {
-      text: commnetValue,
+      text: commentValue,
       id: nextId.current,
     };
 
@@ -50,69 +65,19 @@ function MainDayeong() {
     <div className="mainDayeong">
       <Nav />
       <div className="main-container">
-        <div className="feeds">
-          <div className="article-container">
-            <div className="insta_profile">
-              <div className="profile-img">
-                <img src={sky} alt="sky" />
-              </div>
-              <div className="profile-id">
-                <span>dayeong_lee</span>
-              </div>
-            </div>
-            <div className="setting-img">
-              <i className="fa-solid fa-ellipsis" />
-            </div>
-          </div>
-          <div className="article">
-            <img src={city} alt="city" />
-          </div>
-          <div className="article-icon">
-            <div className="icon-left">
-              <i className="fa-solid fa-heart feed-heart icon-size" />
-              <i className="fa-regular fa-comment icon-size" />
-              <i className="fa-solid fa-arrow-up-from-bracket feed-share icon-size" />
-            </div>
-            <div className="icon-right">
-              <i className="fa-regular fa-bookmark icon-size" />
-            </div>
-          </div>
-          <div className="like-img">
-            <img src={sky} alt="sky" />
-            <span>
-              <b>aineworld</b>님 <b>외</b> <b>120명</b>이 좋아합니다
-            </span>
-          </div>
-          <div className="comment-one">
-            <span>
-              <b>canon_mj</b> 위워크에서 진행한 베이킹 클래스...
-            </span>
-            <span>더 보기</span>
-          </div>
-          <div className="comment-two">
-            <span>
-              <b>neceosecius</b> 거봐 좋았잖아~~~~~ 🙆🏻‍♀️
-            </span>
-            <i className="fa-regular fa-heart" />
-          </div>
-          <div className="comment-time">
-            <span>42분 전</span>
-          </div>
-          <div className="comment-container">
-            {commentArr.map(element => (
-              <Comment element={element} onRemove={onRemove} />
+        <div>
+          {feeds &&
+            feeds.map(feed => (
+              <Feeds
+                commentArr={commentArr}
+                onRemove={onRemove}
+                onSubmit={onSubmit}
+                commentValue={commentValue}
+                onChange={saveComment}
+                key={feed.id}
+                feed={feed}
+              />
             ))}
-          </div>
-
-          <form className="reply" onSubmit={onSubmit}>
-            <input
-              type="text"
-              placeholder="댓글 달기..."
-              value={commnetValue}
-              onChange={saveComment}
-            />
-            <button>게시</button>
-          </form>
         </div>
         <div className="main-right">
           <div className="main-right-top">
@@ -191,18 +156,7 @@ function MainDayeong() {
               </div>
             </div>
           </div>
-          <div className="bottom-text">
-            <span>
-              Instagram 정보・지원・홍보 센터・API・
-              <br />
-              채용 정보・개인정보처리방침・약관・
-              <br />
-              디렉터리・프로필・해시태그・언어
-            </span>
-            <br />
-            <br />
-            <span>© 2019 INSTAGRAM</span>
-          </div>
+          <Footer />
         </div>
       </div>
     </div>
