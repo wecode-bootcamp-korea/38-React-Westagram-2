@@ -1,0 +1,12 @@
+[
+  { "id": 1, "text": "MAIN소개" },
+  { "id": 2, "text": "MAIN도움말" },
+  { "id": 3, "text": "MAINAPI" },
+  { "id": 4, "text": "MAIN채용 정보" },
+  { "id": 5, "text": "MAIN개인정보처리방침" },
+  { "id": 6, "text": "MAIN약관" },
+  { "id": 7, "text": "MAIN위치" },
+  { "id": 8, "text": "MAIN인기계정" },
+  { "id": 9, "text": "MAIN혜시태그" },
+  { "id": 10, "text": "MAIN언어" }
+]
