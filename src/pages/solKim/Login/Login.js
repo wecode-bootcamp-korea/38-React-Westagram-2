@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import SignUp from './SignUp/SignUp';
 import './Login.scss';
 
 function LoginSol() {
   const [idInput, setIdInput] = useState('');
   const [passwordInput, setPasswordInput] = useState('');
+  const [signUp, setSignUp] = useState(false);
+  const [token, setToken] = useState('');
 
   const navigate = useNavigate();
 
@@ -30,9 +33,41 @@ function LoginSol() {
       }
     }
   };
+  const loginRequest = () => {
+    fetch('http://10.58.52.248:3000/user/signin', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: idInput,
+        password: passwordInput,
+      }),
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`${response.status} 에러가 발생했습니다.`);
+        }
+        response.json();
+      })
+      .then(data => {
+        localStorage.setItem('token', data.accessToken);
+        setToken(localStorage.getItem('token'));
+      })
+      .catch(error => console.log(error.message));
+  };
 
   return (
     <div className="login-sol">
+      {signUp && (
+        <SignUp
+          idInput={idInput}
+          passwordInput={passwordInput}
+          setIdInput={setIdInput}
+          setPasswordInput={setPasswordInput}
+          setSignUp={setSignUp}
+        />
+      )}
       <div className="login-background">
         <section className="login-container">
           <header className="login-header">
@@ -40,10 +75,10 @@ function LoginSol() {
           </header>
           <form
             className="login-form"
-            onKeyDown={e => {
-              if (e.code === 'Enter') {
-                moveToMain();
-              }
+            onSubmit={e => {
+              e.preventDefault();
+              loginRequest();
+              moveToMain();
             }}
           >
             <input
@@ -62,15 +97,18 @@ function LoginSol() {
                 saveUserPassword(e);
               }}
             />
-            <button
-              type="button"
-              className={`login-btn ${isNotBlank ? '' : 'disabled-btn'}`}
-              onClick={moveToMain}
-            >
+            <button className={`login-btn ${isNotBlank ? '' : 'disabled-btn'}`}>
               로그인
             </button>
           </form>
           <footer className="login-footer">
+            <p
+              onClick={() => {
+                signUp || setSignUp(true);
+              }}
+            >
+              회원가입
+            </p>
             <Link to="#">비밀번호를 잊으셨나요?</Link>
           </footer>
         </section>

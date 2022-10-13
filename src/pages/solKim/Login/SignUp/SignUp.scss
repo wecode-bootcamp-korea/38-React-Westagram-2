@@ -1,40 +1,31 @@
 @import 'src/styles/variables.scss';
 
-.login-sol {
-  .login-background,
-  .login-container,
-  .login-header,
-  .login-form,
-  .login-footer {
+.signup {
+  @include flex(center, center, column);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 999999;
+  background-color: rgba(0, 0, 0, 0.5);
+  * {
     @include flex(center, center, column);
   }
-
-  .login-background {
-    width: 100vw;
-    height: 100vh;
-    background-color: #f9f9f9;
-  }
-
-  .login-container {
+  .signup-container {
     justify-content: space-between;
     width: 350px;
-    height: 350px;
     padding: 30px;
     background-color: white;
     border: 1.5px solid #ededed;
   }
-
-  .login-header {
+  header {
     padding: 10px 0 10px 0;
+    h1 {
+      font-family: 'Lobster', cursive;
+      font-size: 40px;
+      font-weight: bold;
+    }
   }
-
-  .logo {
-    font-family: 'Lobster', cursive;
-    font-size: 40px;
-    font-weight: bold;
-  }
-
-  .login-form {
+  .signup-form {
     input {
       display: block;
       width: 250px;
@@ -66,34 +57,14 @@
         font-size: 12px;
       }
     }
-  }
-
-  .login-btn {
-    width: 250px;
-    height: 30px;
-    margin-top: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #0e7ff4;
-    color: white;
-    cursor: pointer;
-  }
-
-  .disabled-btn {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
-
-  .login-footer {
-    a {
-      color: #163562;
-      font-size: 12px;
-      text-decoration: none;
-    }
-    p {
-      margin-bottom: 12px;
-      color: #163562;
-      font-size: 12px;
+    button {
+      width: 250px;
+      height: 30px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #0e7ff4;
+      color: white;
       cursor: pointer;
     }
   }
