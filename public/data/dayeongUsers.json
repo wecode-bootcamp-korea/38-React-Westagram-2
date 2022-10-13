@@ -1,0 +1,36 @@
+[
+  {
+    "id": 1,
+    "username": "dayeonglee",
+    "userprofile": "https://images.unsplash.com/photo-1665485652572-f769d9d8bcfe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60",
+    "feedimg": "https://images.unsplash.com/photo-1665485653015-7d1eb30e1e04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60",
+    "like": {
+      "id": 1,
+      "username": "aineworld",
+      "userprofile": "https://images.unsplash.com/photo-1665396696736-a9770457bd54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60"
+    },
+    "feedcomment": "안녕하세요",
+    "feedtime": "42분 전",
+    "comment": {
+      "commentId": "neceosecius",
+      "text": "거봐 좋았잖아~~~~~ 🙆🏻‍♀️"
+    }
+  },
+  {
+    "id": 2,
+    "username": "dayeong",
+    "userprofile": "https://images.unsplash.com/photo-1665509867116-917568864ca9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNXx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60",
+    "feedimg": "https://images.unsplash.com/photo-1661956602153-23384936a1d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwzMXx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60",
+    "like": {
+      "id": 1,
+      "username": "dayyy",
+      "userprofile": "https://images.unsplash.com/photo-1665485653462-9e0cc1c8eecb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0NHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60"
+    },
+    "feedcomment": "안녕",
+    "feedtime": "50분 전",
+    "comment": {
+      "commentId": "neceosecius",
+      "text": "거봐 좋았잖아~~~~~ 🙆🏻‍♀️"
+    }
+  }
+]
