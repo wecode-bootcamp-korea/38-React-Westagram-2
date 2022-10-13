@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useId, useState } from 'react';
+import { useNavigate, useRevalidator } from 'react-router-dom';
 import { useRef } from 'react';
 import './Login.scss';
 
@@ -8,6 +8,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const btn = useRef();
   const navigate = useNavigate();
+
   const onIdChange = e => {
     setId(e.target.value);
     // console.log(e.target.value);
@@ -17,18 +18,40 @@ const Login = () => {
     setPassword(e.target.value);
     // console.log(e.target.value);
   };
-
-  const onSubmit = e => {
-    // e.preventDefault();
-    e.currentTarget.disabled = false;
-    navigate('/main');
-  };
-
   const changeColor = () => {
     if (id === '' && password === '') {
       btn.current.style.backgroundColor = 'black';
     } else if (id.length > 1 && password.length > 6) {
       btn.current.style.backgroundColor = '#0095f6';
+    }
+  };
+  const onSubmit = e => {
+    e.preventDefault();
+    e.currentTarget.disabled = false;
+    // navigate('/main');
+    loginAuthorization();
+
+    // const changeColor = () => {
+    //   if (id === '' && password === '') {
+    //     btn.current.style.backgroundColor = 'black';
+    //   } else if (id.length > 1 && password.length > 6) {
+    //     btn.current.style.backgroundColor = '#0095f6';
+    //   }
+    // };
+    // console.log();
+    function loginAuthorization() {
+      fetch('http://10.58.52.150:3000/auth/signin', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json;charset=utf-8' },
+        body: JSON.stringify({
+          email: id,
+          password: password,
+        }),
+      })
+        .then(response => response.json())
+        .then(data => {
+          localStorage.setItem('token', data.accessToken);
+        });
     }
   };
 
