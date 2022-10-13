@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "userId": "dog_dogdog",
+    "userProfilePic": "/images/solKim/profile1.jpg",
+    "feedPhoto": "/images/solKim/park.jpg",
+    "feedText": "공원에 사람이 하나도 없네",
+    "recentLike": "human_human",
+    "recentLikeProfilePic": "/images/solKim/profile2.jpg",
+    "likes": "11",
+    "uploadTime": "42분 전",
+    "commentList": [
+      {
+        "key": "sample",
+        "userId": "alphgo",
+        "comment": "피드 1번 샘플 댓글입니다."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "userId": "sunglass_dog",
+    "userProfilePic": "/images/solKim/profile3.jpg",
+    "feedPhoto": "https://cdn.pixabay.com/photo/2022/08/22/10/01/tree-7403295_960_720.jpg",
+    "feedText": "나무",
+    "recentLike": "iam_ghost",
+    "recentLikeProfilePic": "/images/solKim/profile4.jpg",
+    "likes": "30",
+    "uploadTime": "2시간 전",
+    "commentList": [
+      {
+        "key": "sample",
+        "userId": "alphgo",
+        "comment": "피드 2번 샘플 댓글입니다."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "userId": "dogdogdog",
+    "userProfilePic": "/images/solKim/profile5.jpg",
+    "feedPhoto": "https://cdn.pixabay.com/photo/2022/09/26/15/02/mountains-7480902_960_720.jpg",
+    "feedText": "산",
+    "recentLike": "hello_human",
+    "recentLikeProfilePic": "/images/solKim/profile6.jpg",
+    "likes": "70",
+    "uploadTime": "3시간 전",
+    "commentList": [
+      {
+        "key": "sample",
+        "userId": "alphgo",
+        "comment": "피드 3번 샘플 댓글입니다."
+      }
+    ]
+  }
+]
