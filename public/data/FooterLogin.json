@@ -1,0 +1,12 @@
+[
+  { "id": 1, "text": "LOGIN소개" },
+  { "id": 2, "text": "LOGIN도움말" },
+  { "id": 3, "text": "LOGINAPI" },
+  { "id": 4, "text": "LOGIN채용 정보" },
+  { "id": 5, "text": "LOGIN개인정보처리방침" },
+  { "id": 6, "text": "LOGIN약관" },
+  { "id": 7, "text": "LOGIN위치" },
+  { "id": 8, "text": "LOGIN인기계정" },
+  { "id": 9, "text": "LOGIN혜시태그" },
+  { "id": 10, "text": "LOGIN언어" }
+]
